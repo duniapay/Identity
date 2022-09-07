@@ -10,6 +10,11 @@
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": [],
+  "words": [
+    "fiatconnect",
+    "formated",
+    "Fullname",
+    "microservices"
+  ],
   "version": "0.2"
 }
