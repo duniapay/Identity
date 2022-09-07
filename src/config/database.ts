@@ -8,12 +8,12 @@ export const dbConfig = (): PostgresConnectionOptions => ({
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  // ssl: process.env.POSTGRES_SSL,
-  // extra: {
-  //   ssl: {
-  //     rejectUnauthorized: false,
-  //   },
-  // },
+  ssl: process.env.POSTGRES_SSL,
+  extra: {
+    ssl: {
+      rejectUnauthorized: !process.env.POSTGRES_SSL,
+    },
+  },
   entities: [join(__dirname, '../**/*.entity{.ts,.js}')],
   // We are using migrations, synchronize should be set to false.
   synchronize: true,
