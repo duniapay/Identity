@@ -16,17 +16,13 @@ export const dbConfig = (): PostgresConnectionOptions => ({
   },
   entities: [join(__dirname, '../**/*.entity{.ts,.js}')],
   // We are using migrations, synchronize should be set to false.
-  synchronize: true,
-  dropSchema: true,
+  synchronize: false,
+  dropSchema: false,
   // Run migrations automatically,
   // you can disable this if you prefer running migration manually.
   migrationsRun: false,
   logging: false,
   migrations: [join(__dirname, '../migrations/**/*{.ts,.js}')],
-  // cli: {
-  //   migrationsDir: join(__dirname, '../migrations'),
-  //   entitiesDir: join(__dirname, '../**/*.entity{.ts,.js}'),
-  // },
 });
 
 export default dbConfig();
